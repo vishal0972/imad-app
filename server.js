@@ -61,7 +61,7 @@ function createTemplate (data) {
           </div>
           <hr/>
           <style>
-             body {background-color:#3c9eff}
+             body {background-color:#e8daef}
              h1 {color:black}
              h1 {text-align:center}
           </style>
