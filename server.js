@@ -7,28 +7,30 @@ app.use(morgan('combined'));
 
 
 var articles = {
-    'article-one' : {
-title:'Article-one | Vishal',
-heading: 'Why work hard in life?', 
-content: `
+   'article-one' : {
+  title:'Article-one | Vishal',
+  heading: 'Why work hard in life?', 
+  content: `
     <p1 color:grey width:100%>
         Because I haven't seen any successful person in the world who doesn't work hard. If you want to be successful you have to wok hard. Stop procastinating and start right now. It may take a lot of time to reach at your destination or it may be quick but you have to start. 
     </p1>`
     },
-    'article-two' : {
-title:'Article-two | Vishal',
-heading: 'What is Success?', 
-content: `
+    
+   'article-two' : {
+  title:'Article-two | Vishal',
+  heading: 'What is Success?', 
+  content: `
     <p1 color:green width:100%>
         Success is when you start doing what to love to do. i.e Your passion.
     </p1> `
     },
-    'article-three' : {
-        title:'Article-three | Vishal',
-heading: 'When to be successful?', 
-content: `
+    
+   'article-three' : {
+  title:'Article-three | Vishal',
+  heading: 'When to be successful?', 
+  content: `
         <p1 color:yellow width:100%>
-            lets talk.
+           lets talk.
         </p1> `
     }
 };
@@ -89,7 +91,7 @@ app.get('/:articleName',function (req, res) {
     // articleName == article-one
     // articles[articleName] == {} content object for article one
     var articleName = req.params.articleName;
-  res.send(createTemplate(articles[articleName]));
+    res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
