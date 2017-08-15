@@ -27,7 +27,7 @@ content: `
         title:'Article-three | Vishal',
 heading: 'When to be successful?', 
 content: `
-            <p1 color:yellow width:100%>
+        <p1 color:yellow width:100%>
             lets talk.
         </p1> `
     }
