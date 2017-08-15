@@ -14,61 +14,58 @@ var articleOne = {
 };
 function createTemplate (data) {
     var title = data.title;
-    var header = data.header;
+    var header = data.heading;
     var content = data.content; 
 
-var htmlTemplate = `
-<html>
-    <head>
-        <title>
-            ${title}
-        </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link href="/ui/style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="container">
-        <div>
-            <ol>
-            <li><a href='/'>Home</a></li>
-            <li><a href='/article-one'>Article-one</a></li>
-            <li><a href='/article-two'>Article-two</a></li>
-            <li><a href='/article-three'>Article-three</a></li>
-            </ol>
-        </div>
-        <hr/>
-        <style>
-            body {background-color:#3c9eff}
-            h1 {color:black}
-            h1 {text-align:center}
-        </style>
-        <center>
-        <div>
-        <h1>
-        ${header}
-        </h1>
-        </div>
-       
-        <br/>
-        <div>
-        ${content}
-        </div>
-        </center>
-        </div>
-    </body>
-</html>
-
-
-
-                 `;
+ var htmlTemplate = `
+  <html>
+     <head>
+         <title>
+             ${title}
+         </title>
+         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+         <link href="/ui/style.css" rel="stylesheet" />
+     </head>
+     <body>
+         <div class="container">
+         <div>
+             <ol>
+             <li><a href='/'>Home</a></li>
+             <li><a href='/article-one'>Article-one</a></li>
+             <li><a href='/article-two'>Article-two</a></li>
+             <li><a href='/article-three'>Article-three</a></li>
+             </ol>
+         </div>
+         <hr/>
+         <style>
+             body {background-color:#3c9eff}
+             h1 {color:black}
+             h1 {text-align:center}
+         </style>
+         <center>
+         <div>
+         <h1>
+         ${heading}
+         </h1>
+         </div>
+         <br/>
+         <div>
+         ${content}
+         </div>
+          </center>
+         </div>
+     </body>
+ </html>
+`;
     return htmlTemplate;
 }
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article-one',function (req, res) {
-  res.send(createTemplate(Article-one));
+  res.send(createTemplate(ArticleOne));
 });
 
 app.get('/article-two',function (req, res) {
