@@ -5,12 +5,72 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleOne = {
+    title:'Article-one | Vishal',
+    heading: 'Why work hard in life', 
+    date: 'Sept 5, 2017',
+    content:`<p1 color:grey width:100%>
+            Because I haven't seen any successful person in the world who doesn't work hard. If you want to be successful you have to wok hard. Stop procastinating and start right now. It may take a lot of time to reach at your destination or it may be quick but you have to start. 
+             </p1>`
+};
+function createTemplate (data) {
+    var title = data.title ;
+    var date= data.date;
+    var header = data.header ;
+    var content = data.contehnt ;
+
+var htmlTemplate = `
+<html>
+    <head>
+        <title>
+            ${title}
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+        <div>
+            <ol>
+            <li><a href='/'>Home</a></li>
+            <li><a href='/article-one'>Article-one</a></li>
+            <li><a href='/article-two'>Article-two</a></li>
+            <li><a href='/article-three'>Article-three</a></li>
+            </ol>
+        </div>
+        <hr/>
+        <style>
+            body {background-color:#3c9eff}
+            h1 {color:black}
+            h1 {text-align:center}
+        </style>
+        <center>
+        <div>
+        <h1>
+        ${header}
+        </h1>
+        </div>
+       
+        <br/>
+        <div>
+        ${content}
+        </div>
+        </center>
+        </div>
+    </body>
+</html>
+
+
+
+    `;
+    return htmlTemplate;
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article-one',function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+  res.send(createTemplate(Article-one));
 });
 
 app.get('/article-two',function (req, res) {
